@@ -47,7 +47,7 @@ Run `make help` or refer to the `Makefile` for any additional or custom commands
 ## GCP Terraform Testing Environment
 
 This Terraform project sets up a Google Cloud environment within a **single project**.
-It creates a standard VPC network, a subnet, and deploys several Compute Engine instances.
+It creates a standard VPC network, a subnet, and deploys several Compute Engine instances with snmpd enabled for polling.
 Two of these instances are configured with **FRRouting (FRR)** via a startup script,
 allowing them to function as basic IP routers.
 This setup is intended for testing inter-VM communication, basic routing, and SNMP polling.
