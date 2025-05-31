@@ -1,11 +1,10 @@
-
 # -------------------------------------------------------------------------------------------
 # VARIABLES: Variable declarations to be used within make to generate commands.
 # -------------------------------------------------------------------------------------------
 # Variables that are specific to each project.
 #PROJECT      := $(shell basename `pwd`)
 #REPO         := local
-#REGISTRY     := nautobot
+#REGISTRY     := librenms
 #COVERAGE_PCT := 40
 DEVELOP_DIR := "development"
 
@@ -14,7 +13,7 @@ BASE = VERSION=$(VERSION) docker compose --project-directory ${DEVELOP_DIR} -f "
 
 default: help
 
-cli: .env ## Exec into an already running Nautobot container. Start the container if stopped.
+cli: .env ## Exec into an already running LibreNMS container. Start the container if stopped.
 ifeq (,$(findstring librenms,$($BASE ps --services --filter status=running)))
 	@make start
 endif
@@ -44,14 +43,6 @@ restart: .env ## Restart docker containers.
 destroy: ## Destroy all the docker containers and attached volumes. This will delete all data!!
 	@$(BASE) down --volumes
 .PHONY: destroy
-
-
-# -------------------------------------------------------------------------------------------
-# DOCKER/BUILD: Building of containers and pushing to registries
-# -------------------------------------------------------------------------------------------
-build:  ## Builds a new development container. Does not use cached data.
-	@VERSION=${VERSION} $(BASE) build nautobot --no-cache
-.PHONY: build
 
 # -------------------------------------------------------------------------------------------
 # GENERAL: utility commands for environment management.
