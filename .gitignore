@@ -1,3 +1,6 @@
+# ignore custom env
+development/.env
+
 # Local .terraform directories
 .terraform/
 
