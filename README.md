@@ -1,6 +1,19 @@
 # librenms-dev
 Local dev instance of LibreNMS
 
+## Requirements
+* Docker
+* Docker Compose
+* Make
+* Terraform (for GCP environment)
+* Google Cloud SDK (`gcloud`) (for GCP environment)
+* A Google Cloud account with billing enabled (for GCP environment)
+* A Google Cloud project created (for GCP environment)
+
+> [!WARNING]
+> To prevent polling performance issues inside the librenms container, you should enable the `Use kernel networking for UDP` option in the Docker Desktop settings.
+> Settings -> Resources -> Network -> Use kernel networking for UDP
+
 
 ## Managing the Docker Stack with Makefile
 
