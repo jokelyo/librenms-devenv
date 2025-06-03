@@ -59,6 +59,9 @@ Run `make help` or refer to the `Makefile` for any additional or custom commands
 
 ## GCP Terraform Testing Environment
 
+> [!WARNING]
+> Applying this plan will generate cloud charges. You will be responsible for any costs incurred.
+
 This Terraform project sets up a Google Cloud environment within a **single project**.
 It creates a standard VPC network, a subnet, and deploys several Compute Engine instances with snmpd enabled for polling.
 Two of these instances are configured with **FRRouting (FRR)** via a startup script,
@@ -69,10 +72,10 @@ This setup is intended for testing inter-VM communication, basic routing, and SN
 
 * **FRRouting on Debian:** The `frr-router-*` instances use a standard Debian image (free-tier eligible `e2-micro`) and install FRR software. This provides routing functionality without the licensing costs of proprietary virtual appliances. However, performance is limited by the `e2-micro` instance type.
 * **Compute Engine Free Tier:** Google Cloud offers one `e2-micro` instance per month for free (in specific US regions, subject to change). This project creates multiple `e2-micro` instances. To stay within free tier limits and avoid costs:
-* **STOP** instances when not in use: `gcloud compute instances stop [INSTANCE_NAME] --project [PROJECT_ID] --zone [ZONE]`
-* Delete all resources when done: `terraform destroy`
-* **External IP Addresses:** Instances are configured with ephemeral external IP addresses by default for easier SSH access. These can incur small costs.
-* **SNMP Firewall Rule:** The `allow-snmp` firewall rule is configured to allow UDP/161 from `0.0.0.0/0` for lab convenience. **For any non-lab environment, you MUST restrict the `source_ranges` to the specific IP address(es) of your SNMP polling station.**
+  * **STOP** instances when not in use: `gcloud compute instances stop [INSTANCE_NAME] --project [PROJECT_ID] --zone [ZONE]`
+  * Delete all resources when done: `terraform destroy`
+  * **External IP Addresses:** Instances are configured with ephemeral external IP addresses by default for easier SSH access. These can incur small costs.
+* **SNMP Firewall Rule:** The `allow-snmp` firewall rule is configured to allow UDP/161 from the public source CIDR specified in your tfvars file.**
 
 ### Prerequisites
 
