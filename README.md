@@ -15,47 +15,22 @@ Local dev instance of LibreNMS
 > Settings -> Resources -> Network -> Use kernel networking for UDP
 
 
-## Managing the Docker Stack with Makefile
+## Managing LibreNMS with Makefile
 
 This project uses Docker Compose, managed via a `Makefile`, to simplify common operations.
 
-*   **Start all services (detached mode):**
-    ```bash
-    make start
-    ```  
+### Available Make Commands
+```shell
+cli                            Exec into an already running LibreNMS container. Start the container if stopped.
+debug                          Launch docker-compose environment in attached mode.
+destroy                        Destroy all the docker containers and attached volumes. This will delete all data!!
+help                           Show this help message.
+logs                           Tail the logs of the compose environment.
+restart                        Restart docker containers.
+start                          Start the docker-compose environment in detached mode.
+stop                           Stop and bring down all the running containers started by compose.
 
-*   **Stop services (without removing them):**
-    ```bash
-    make stop
-    ```
-  
-*   **Stop and remove all services, networks, and volumes (deletes data):**
-    ```bash
-    make destroy
-    ```
-
-*   **View logs for all services:**
-    ```bash
-    make logs
-    ```
-
-*   **Access a shell within the `librenms` service container:**
-    ```bash
-    make cli
-    ```
-
-*   **Restart services:**
-    ```bash
-    make restart
-    ```
-
-*   **Launch services in attached mode (for debugging):**
-    ```bash
-    make debug
-    ```
-
-Run `make help` or refer to the `Makefile` for any additional or custom commands.
-
+```
 
 ## GCP Terraform Testing Environment
 
