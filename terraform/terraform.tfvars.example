@@ -4,6 +4,9 @@
 project_id = "your-gcp-project-id" # Replace with your actual Google Cloud Project ID
 snmp_source_ip_cidr = "YOUR_PUBLIC_IP/32" # Replace YOUR_PUBLIC_IP with your actual public IP, e.g., "1.2.3.4/32"
 
+librenms_host = "librenms.example.com" # Replace with your actual LibreNMS server hostname or IP address
+librenms_token = "token" # Replace with your actual LibreNMS API token or use LIBRENMS_TOKEN environment variable
+
 # you could also do this to make it more dynamic:
 # terraform apply -var="snmp_source_ip_cidr=$(curl -s ifconfig.me)/32"
 

@@ -60,3 +60,13 @@ variable "snmp_source_ip_cidr" {
   # No default, to ensure it's explicitly set in terraform.tfvars
 }
 
+variable "librenms_host" {
+  description = "The hostname or IP address of the LibreNMS server."
+  type        = string
+  default     = "http://localhost:8000/" # Default to localhost, can be overridden
+}
+
+variable "librenms_token" {
+  description = "The API token for LibreNMS. Can also be set via the LIBRENMS_TOKEN environment variable."
+  type        = string
+}

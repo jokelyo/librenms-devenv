@@ -1,5 +1,5 @@
 # librenms-dev
-Local dev instance of LibreNMS
+Local dev instance of LibreNMS. Test the [LibreNMS Terraform provider](https://github.com/jokelyo/terraform-provider-librenms) with GCP environment setup.
 
 ## Requirements
 * Docker
