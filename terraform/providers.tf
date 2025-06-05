@@ -10,7 +10,12 @@ terraform {
       source  = "jokelyo/librenms"
       version = ">= 0.1"
     }
+    time = {
+      source  = "hashicorp/time"
+      version = ">= 0.13.1" # Using a stable version
+    }
   }
+  required_version = ">= 1.11"
 }
 
 provider "google" {
