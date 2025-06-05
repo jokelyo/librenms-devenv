@@ -3,6 +3,7 @@ Local dev instance of LibreNMS.
 Test the [LibreNMS Terraform provider](https://github.com/jokelyo/terraform-provider-librenms) with simple GCP environment setup.
 
 ## Requirements
+* OSX or *nix-compatible OS
 * Docker
 * Docker Compose
 * Make
@@ -10,6 +11,7 @@ Test the [LibreNMS Terraform provider](https://github.com/jokelyo/terraform-prov
 * [gcloud](https://cloud.google.com/sdk/docs/install) (for GCP environment)
 * A Google Cloud account with billing enabled (for GCP environment)
 * A Google Cloud project created (for GCP environment)
+* openssl (for generating API token)
 
 > [!WARNING]
 > To prevent polling performance issues inside the librenms container, you should enable the `Use kernel networking for UDP` option in the Docker Desktop settings.
