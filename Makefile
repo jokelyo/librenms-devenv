@@ -15,7 +15,7 @@ TERRAFORM = terraform -chdir=terraform
 
 default: help
 
-setup: ## Set up LibreNMS and Terraform
+setup: ## Set up LibreNMS and Terraform environments
 	@echo "Setting up LibreNMS and Terraform environment..."
 	@if [ -f ${DEVELOP_DIR}/.env ]; then \
 	   echo "Error: ${DEVELOP_DIR}/.env file already exists, exiting setup."; \
