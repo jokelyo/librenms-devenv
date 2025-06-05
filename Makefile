@@ -30,6 +30,7 @@ setup: ## Set up LibreNMS and Terraform environments
 
 	@echo "Creating terraform/terraform.tfvars file..."
 	@grep -v librenms terraform/terraform.tfvars.example > terraform/terraform.tfvars
+	@chmod 0600 terraform/terraform.tfvars
 	@echo 'librenms_host = "http://localhost:8000/"' >> terraform/terraform.tfvars
 	@echo 'librenms_token = "${LIBRENMS_TOKEN}"' >> terraform/terraform.tfvars
 
@@ -115,6 +116,7 @@ tf-destroy: .tfvars ## terraform destroy
 	@if [ ! -f "${PWD}/${DEVELOP_DIR}/.env" ]; then \
 	   echo "Creating ${DEVELOP_DIR}/.env file..."; \
 	   cp ${PWD}/${DEVELOP_DIR}/.env.example ${PWD}/${DEVELOP_DIR}/.env; \
+	   chmod 0600 ${PWD}/${DEVELOP_DIR}/.env; \
 	fi
 .PHONY: .env
 
@@ -131,6 +133,7 @@ _env-%:
 	@if [ ! -f "terraform/terraform.tfvars" ]; then \
 	   echo "Creating terraform/terraform.tfvars file..."; \
 	   cp terraform/terraform.tfvars.example terraform/terraform.tfvars; \
+	   chmod 0600 terraform/terraform.tfvars; \
 	fi
 .PHONY: .tfvars
 
