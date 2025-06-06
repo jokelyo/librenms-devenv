@@ -108,6 +108,13 @@ tf-destroy: .tfvars ## terraform destroy
 	$(TERRAFORM) destroy
 .PHONY: tf-destroy
 
+tf-lint: ## Run tflint to check Terraform code for issues.
+	@if [ -z "$(shell which tflint)" ]; then \
+		echo "tflint is not installed."; \
+		exit 1; \
+	fi
+	@tflint --chdir=terraform
+.PHONY: tf-lint
 
 # -------------------------------------------------------------------------------------------
 # GENERAL: utility commands for environment management.

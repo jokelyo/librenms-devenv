@@ -56,5 +56,5 @@ tf-init           Run terraform init.
 tf-plan           Run terraform plan.
 tf-apply          Run terraform apply.
 tf-destroy        Run terraform destroy.
-
+tf-lint           Run tflint to check for issues.
 ```
