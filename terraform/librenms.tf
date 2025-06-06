@@ -272,7 +272,7 @@ resource "librenms_alertrule" "ping_latency_groups_locations" {
   ]
 
   locations = [
-    librenms_location.test_location.id,
-    librenms_location.test_location2.id
+    librenms_location.test_location2.id,
+    librenms_location.test_location.id
   ]
 }
