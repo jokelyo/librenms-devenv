@@ -4,7 +4,7 @@ resource "time_sleep" "instance_creations" {
 
   create_duration = "60s"
 
-  triggers =  {
+  triggers = {
     #instance_id = google_compute_instance.lab_instances[each.key].id
     ip_address = google_compute_instance.lab_instances[each.key].network_interface[0].access_config[0].nat_ip
   }
