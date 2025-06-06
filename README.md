@@ -39,7 +39,7 @@ make tf-apply
 
 This project uses Docker Compose, managed via a `Makefile`, to simplify common operations.
 
-```shell
+```text
 cli               Exec into an already running LibreNMS container. Start the container if stopped.
 debug             Launch docker-compose environment in attached mode.
 destroy           Destroy all the docker containers and attached volumes. This will delete all data!!
