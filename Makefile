@@ -48,7 +48,7 @@ setup: ## Set up LibreNMS and Terraform environments
 	@echo " 1. Run 'gcloud auth login --update-adc' to authenticate with Google Cloud."
 	@echo " 2. Run 'make tf-init' to initialize Terraform."
 	@echo " 3. Run 'make tf-plan' to see the resources that will be created."
-	@echo " 4. Run 'make tf-apply [-auto-approve]' to apply the Terraform configuration."
+	@echo " 4. Run 'make tf-apply' to apply the Terraform configuration."
 .PHONY: setup
 
 cli: .env ## Exec into an already running LibreNMS container. Start the container if stopped.
