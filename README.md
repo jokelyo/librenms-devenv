@@ -1,4 +1,4 @@
-# librenms-dev
+# librenms-devenv
 Local dev instance of LibreNMS. 
 Test the [LibreNMS Terraform provider](https://github.com/jokelyo/terraform-provider-librenms) with simple GCP environment setup.
 

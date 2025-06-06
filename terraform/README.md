@@ -1,5 +1,5 @@
 # Terraform GCP Test Environment
-This config was vibe coded with Github Copilot Agent using Gemini 2.5 Pro (Preview). 
+This config was initially vibe coded with Github Copilot Agent using Gemini 2.5 Pro (Preview). 
 The structure is a little different than I would have done it, but it works and was a fun learning experience.
 
 > [!WARNING]
@@ -11,8 +11,15 @@ Two of these instances are configured with **FRRouting (FRR)** via a startup scr
 allowing them to function as basic IP routers.
 This setup is intended for testing inter-VM communication, basic routing, and SNMP polling.
 
-It will also create the compute instances in LibreNMS and create a dynamic cloud group.
+It will also create the following resources in the local LibreNMS (see [librenms.tf](librenms.tf)):
+ * GCP devices
+ * dummy device (force added)
+ * test device groups
+ * test fixed location
+ * test services
+ * a few default alerts
 
+### GCP Environment Details (Courtesy of Copilot Agent)
 **VERY IMPORTANT NOTES ON FREE TIER AND COSTS:**
 
 * **FRRouting on Debian:** The `frr-router-*` instances use a standard Debian image (free-tier eligible `e2-micro`) and install FRR software. This provides routing functionality without the licensing costs of proprietary virtual appliances. However, performance is limited by the `e2-micro` instance type.

@@ -8,7 +8,7 @@ terraform {
     }
     librenms = {
       source  = "jokelyo/librenms"
-      version = ">= 0.1"
+      version = ">= 0.2"
     }
     time = {
       source  = "hashicorp/time"
